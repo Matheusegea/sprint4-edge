@@ -8,7 +8,7 @@ const char* ssid = "Wokwi-GUEST";
 const char* password = "";
 String serverUrl = "http://20.97.192.88:5000/api/atualizar_dados";
 
-//ariáveis do MPU6050 e Cálculo
+//Variáveis do MPU6050 e Cálculo
 MPU6050 mpu;
 int16_t ax, ay, az;
 
@@ -77,7 +77,6 @@ void loop() {
   // Integração com o tempo, limitando a aceleração para evitar crescimento rápido
   velocidade_integrada += acel_movimento_ms2 * DELTA_T_SECONDS;
 
-  // Aplique uma "fricção" para reduzir a velocidade de forma natural
   velocidade_integrada *= 0.98;
 
   // Garantir que a velocidade não seja negativa
